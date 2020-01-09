@@ -1,0 +1,23 @@
+{
+  "name": "nodeLSfunctionality",
+  "version": "1.0.0",
+  "description": "Using the node API to mimic the linux 'ls' command to display the files/folders in a given directory",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stelthdroid8/nodeLSfunctionality.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "nls": "index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/stelthdroid8/nodeLSfunctionality/issues"
+  },
+  "homepage": "https://github.com/stelthdroid8/nodeLSfunctionality#readme"
+}
