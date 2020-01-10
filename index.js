@@ -1,19 +1,21 @@
 #!/usr/bin/env node
 //file system module
 const fs = require('fs');
+const chalk = require('chalk');
+const path = require('path');
 
 // const process = require('process');
 //the process module is added into the global scope of every project
 
 const { lstat } = fs.promises;
-
-fs.readdir(process.cwd(), async (err, fileNames) => {
+const targetDir = process.argv[2] || process.cwd();
+fs.readdir(targetDir, async (err, fileNames) => {
   if (err) {
     console.log('error: ', err);
   }
 
   const statPromises = fileNames.map(filename => {
-    return lstat(filename);
+    return lstat(path.join(targetDir, filename));
   });
 
   const allStats = await Promise.all(statPromises);
@@ -21,7 +23,11 @@ fs.readdir(process.cwd(), async (err, fileNames) => {
   for (let stats of allStats) {
     const index = allStats.indexOf(stats);
 
-    console.log(fileNames[index], stats.isFile());
+    if (!stats.isFile()) {
+      console.log(chalk.yellow(fileNames[index]));
+    } else {
+      console.log(chalk.bold(fileNames[index]));
+    }
   }
   //   wrap last call in a promise and use async/wait
 
