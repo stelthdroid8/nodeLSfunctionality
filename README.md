@@ -5,6 +5,6 @@ requires chalk module to display the text correcty
   - npm i chalk 
 
 
-to instal and use the chalk library. 
+to install and use the chalk library. 
 
 
