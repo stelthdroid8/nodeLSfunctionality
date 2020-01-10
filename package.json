@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/stelthdroid8/nodeLSfunctionality/issues"
   },
-  "homepage": "https://github.com/stelthdroid8/nodeLSfunctionality#readme"
+  "homepage": "https://github.com/stelthdroid8/nodeLSfunctionality#readme",
+  "dependencies": {
+    "chalk": "^3.0.0"
+  }
 }
